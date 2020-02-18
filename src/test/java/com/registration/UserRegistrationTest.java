@@ -17,4 +17,10 @@ public class UserRegistrationTest {
         boolean name = registration.lastName("Patil");
         Assert.assertEquals(true, name);
     }
+
+    @Test
+    public void testEmail() {
+        boolean mail = registration.emailId("abc.xyz@bl.co.in");
+        Assert.assertEquals(true, mail);
+    }
 }

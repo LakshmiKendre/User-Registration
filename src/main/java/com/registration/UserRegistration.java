@@ -14,4 +14,8 @@ public class UserRegistration {
     public boolean lastName(String lname) {
         return Pattern.matches("^[A-Z][a-z]{2,}",lname);
     }
+
+    public boolean emailId(String email) {
+        return Pattern.matches("^([a-z]{3,}|[a-z]{3,}[.][a-z]{3,})[@]([a-z]{2,}[.][a-z]{2,}|[a-z]{2,}[.][a-z]{2,}[.][a-z]{2,})",email);
+    }
 }
