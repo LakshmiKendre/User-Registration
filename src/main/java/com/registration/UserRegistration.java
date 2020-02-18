@@ -25,7 +25,7 @@ public class UserRegistration {
     }
 
     public boolean password_shouldMinimum_8_character(String password) {
-        return Pattern.matches("(?=.*?[A-Z])[a-zA-z0-9#?!@$%^&*-]{8,}",password);
+        return Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])[a-zA-z0-9#?!@$%^&*-]{8,}",password);
     }
 
 }

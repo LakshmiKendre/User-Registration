@@ -110,6 +110,12 @@ public class UserRegistrationTest {
         boolean password = registration.password_shouldMinimum_8_character("lakshmiPatil@123");
         Assert.assertEquals(true, password);
     }
+    @Test
+    public void givenPassword_withMinimum_One_NumericNumber_shouldReturnTrue() {
+        boolean password = registration.password_shouldMinimum_8_character("Lakshmi123");
+        Assert.assertEquals(true, password);
+    }
+
 
     @Test
     public void givenPassword_within_8_character_shouldReturnFalse() {
@@ -119,6 +125,11 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_whenMissingUppercase_shouldReturnFalse() {
         boolean password = registration.password_shouldMinimum_8_character("lakshmi@123");
+        Assert.assertEquals(false, password);
+    }
+    @Test
+    public void givenPassword_whenMissing_NumericNumber_shouldReturnFalse() {
+        boolean password = registration.password_shouldMinimum_8_character("LakshmiPatil");
         Assert.assertEquals(false, password);
     }
 
