@@ -8,19 +8,23 @@ public class UserRegistration {
         System.out.println("Welcome to User Registration problem ");
     }
 
-    public boolean firstName(String fname) {
+    public boolean firstName_validation(String fname) {
         return Pattern.matches("^[A-Z][a-z]{2,}",fname);
     }
 
-    public boolean lastName(String lname) {
+    public boolean lastName_validation(String lname) {
         return Pattern.matches("^[A-Z][a-z]{2,}",lname);
     }
 
-    public boolean emailId(String email) {
+    public boolean emailId_validation(String email) {
         return Pattern.matches("^([a-z]{3,}|[a-z]{3,}[.][a-z]{3,})[@]([a-z]{2,}[.][a-z]{2,}|[a-z]{2,}[.][a-z]{2,}[.][a-z]{2,})",email);
     }
 
-    public boolean mobileNo(String mobile) {
+    public boolean mobileNo_validation(String mobile) {
         return Pattern.matches("^([0-9]{2}[ ][1-9][0-9]{9})",mobile);
+    }
+
+    public boolean password_shouldMinimum_8_charactor(String password) {
+        return Pattern.matches("^[a-zA-Z0-9!@#$%^&*()_+-/?.;:=']{8,}",password);
     }
 }
