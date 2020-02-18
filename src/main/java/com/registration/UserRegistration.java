@@ -10,4 +10,8 @@ public class UserRegistration {
     public boolean firstName(String fname) {
         return Pattern.matches("^[A-Z][a-z]{2,}",fname);
     }
+
+    public boolean lastName(String lname) {
+        return Pattern.matches("^[A-Z][a-z]{2,}",lname);
+    }
 }

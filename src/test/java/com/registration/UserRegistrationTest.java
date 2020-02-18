@@ -11,4 +11,10 @@ public class UserRegistrationTest {
         Assert.assertEquals(true, name);
 
     }
+
+    @Test
+    public void testLastName() {
+        boolean name = registration.lastName("Patil");
+        Assert.assertEquals(true, name);
+    }
 }
