@@ -1,5 +1,6 @@
 package com.registration;
 
+import javax.swing.*;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
@@ -17,5 +18,9 @@ public class UserRegistration {
 
     public boolean emailId(String email) {
         return Pattern.matches("^([a-z]{3,}|[a-z]{3,}[.][a-z]{3,})[@]([a-z]{2,}[.][a-z]{2,}|[a-z]{2,}[.][a-z]{2,}[.][a-z]{2,})",email);
+    }
+
+    public boolean mobileNo(String mobile) {
+        return Pattern.matches("^([0-9]{2}[ ][1-9][0-9]{9})",mobile);
     }
 }

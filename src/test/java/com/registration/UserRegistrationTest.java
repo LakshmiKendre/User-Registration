@@ -23,4 +23,10 @@ public class UserRegistrationTest {
         boolean mail = registration.emailId("abc.xyz@bl.co.in");
         Assert.assertEquals(true, mail);
     }
+
+    @Test
+    public void testMobileNo() {
+        boolean mobile = registration.mobileNo("91 9876543210");
+        Assert.assertEquals(true, mobile);
+    }
 }
