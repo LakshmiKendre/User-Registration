@@ -94,7 +94,7 @@ public class UserRegistrationTest {
         Assert.assertEquals(false, mobile);
     }
     @Test
-    public void givenMobileNo_whenNotEntered_Exact_10Digit_shouldReturnFalse() {
+    public void givenMobileNo_whenNotEntered_exact_10Digit_shouldReturnFalse() {
         boolean mobile = registration.mobileNo_validation("76543210");
         Assert.assertEquals(false, mobile);
     }
@@ -102,35 +102,49 @@ public class UserRegistrationTest {
     //test cases for password
     @Test
     public void givenPassword_withMinimum_8_character_shouldReturnTrue() {
-        boolean password = registration.password_shouldMinimum_8_character("Lakshmi@123");
+        boolean password = registration.password_Validation("Lakshmi@123");
         Assert.assertEquals(true,password);
     }
     @Test
-    public void givenPassword_withMinimum_One_Uppercase_shouldReturnTrue() {
-        boolean password = registration.password_shouldMinimum_8_character("lakshmiPatil@123");
+    public void givenPassword_withMinimum_one_uppercase_shouldReturnTrue() {
+        boolean password = registration.password_Validation("lakshmiPatil@123");
         Assert.assertEquals(true, password);
     }
     @Test
-    public void givenPassword_withMinimum_One_NumericNumber_shouldReturnTrue() {
-        boolean password = registration.password_shouldMinimum_8_character("Lakshmi123");
+    public void givenPassword_withMinimum_one_numericNumber_shouldReturnTrue() {
+        boolean password = registration.password_Validation("Lakshmi@123");
+        Assert.assertEquals(true, password);
+    }
+    @Test
+    public void givenPassword_withExact_one_specialCharacter_shouldReturnTrue() {
+        boolean password = registration.password_Validation("Lakshmi@123");
         Assert.assertEquals(true, password);
     }
 
 
     @Test
     public void givenPassword_within_8_character_shouldReturnFalse() {
-        boolean password = registration.password_shouldMinimum_8_character("abc@2");
+        boolean password = registration.password_Validation("abc@2");
         Assert.assertEquals(false, password);
     }
     @Test
-    public void givenPassword_whenMissingUppercase_shouldReturnFalse() {
-        boolean password = registration.password_shouldMinimum_8_character("lakshmi@123");
+    public void givenPassword_whenMissing_uppercase_shouldReturnFalse() {
+        boolean password = registration.password_Validation("lakshmi@123");
         Assert.assertEquals(false, password);
     }
     @Test
-    public void givenPassword_whenMissing_NumericNumber_shouldReturnFalse() {
-        boolean password = registration.password_shouldMinimum_8_character("LakshmiPatil");
+    public void givenPassword_whenMissing_numericNumber_shouldReturnFalse() {
+        boolean password = registration.password_Validation("LakshmiPatil");
         Assert.assertEquals(false, password);
     }
-
+    @Test
+    public void givenPassword_whenMissing_specialCharacter_shouldReturnFalse() {
+        boolean password = registration.password_Validation("LakshmiPatil123");
+        Assert.assertEquals(false, password);
+    }
+    @Test
+    public void givenPassword_whenMoreThanOne_specialCharacter_shouldReturnFalse() {
+        boolean password = registration.password_Validation("%Lakshmi@123");
+        Assert.assertEquals(false, password);
+    }
 }

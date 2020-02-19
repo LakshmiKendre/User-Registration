@@ -24,8 +24,7 @@ public class UserRegistration {
         return Pattern.matches("^([0-9]{2}[ ][1-9][0-9]{9})",mobile);
     }
 
-    public boolean password_shouldMinimum_8_character(String password) {
-        return Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])[a-zA-z0-9#?!@$%^&*-]{8,}",password);
+    public boolean password_Validation(String password) {
+        return Pattern.matches("^((?=.*?[A-Z])(?=.*?[0-9])(?=[^#|?|!|@|$|%|&|*|-]*[#|?|!|@|$|%|&|*|-][^#|?|!|@|$|%|^|&|*|-]*$)[a-zA-Z0-9#?!@$%^&*-]{8,})$",password);
     }
-
 }
