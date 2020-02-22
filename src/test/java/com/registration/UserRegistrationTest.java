@@ -147,4 +147,5 @@ public class UserRegistrationTest {
         boolean password = registration.password_Validation("%Lakshmi@123");
         Assert.assertEquals(false, password);
     }
+
 }
